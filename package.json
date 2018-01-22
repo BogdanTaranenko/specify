@@ -8,7 +8,8 @@
     "dev:build": "webpack --config webpack.config.js --watch",
     "dev:watch": "nodemon --watch build --exec \"node build/bundle.js\" ",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --require babel-core/register --require mocha-graphql-register --recursive",
-    "lint": "eslint --ignore-pattern '/build/bundle.js' **/*.js"
+    "lint": "eslint --ignore-pattern '/build/bundle.js' **/*.js",
+    "heroku-postbuild": "webpack -p --config webpack.config.js --progress"
   },
   "author": "Taranenko",
   "license": "ISC",
