@@ -1,0 +1,20 @@
+type Category {
+    name: String!
+    spices: [Spice]
+}
+
+input CategoryInput {
+    name: String!
+    spices: [String]
+}
+
+extend type Query {
+    getCategories: [Category]
+    getCategory (id: ID!): Category!
+}
+
+extend type Mutation {
+    updateCategory(id: ID!, input: CategoryInput!): Category
+    createCategory(input: CategoryInput!): Category
+    deleteCategory(id: ID!): Category
+}

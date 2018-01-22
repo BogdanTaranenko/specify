@@ -1,0 +1,22 @@
+type Spice {
+    name: String!
+    description: String!
+    categories: [Category]
+}
+
+input SpiceInput {
+    name: String!
+    description: String!
+    categories: [String]
+}
+
+type Query {
+    getSpices: [Spice]
+    getSpice (id: ID!): Spice!
+}
+
+type Mutation {
+    updateSpice(id: ID!, input: SpiceInput!): Spice
+    createSpice(input: SpiceInput!): Spice
+    deleteSpice(id: ID!): Spice
+}
